@@ -23,3 +23,22 @@
   
 // })
 
+
+// post reqwest 
+
+let options = {
+    method: "POST",
+    header : {
+        "content-type": "application/json"
+    },
+    body: JSON.stringify({
+            id: 1,
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }),
+}
+
+fetch('https://jsonplaceholder.typicode.com/todos/1' , options)
+      .then(response => response.json())
+      .then(json => console.log(json))
